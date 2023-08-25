@@ -13,9 +13,9 @@ public class Main extends JFrame {
 
     class Canvas extends JPanel {
       Stage stage;
-      public Canvas() {
-        setPreferredSize(new Dimension(720, 720));
-        stage = StageReader.readStage("data/stage11.rvb");
+      public Canvas() throws IOException {
+        setPreferredSize(new Dimension(1024, 720));
+        stage = StageReader.readStage("data/stage1.rvb");
       }
 
       @Override
@@ -24,7 +24,7 @@ public class Main extends JFrame {
       }
     }
 
-    private Main() {
+    private Main() throws IOException {
       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       Canvas canvas = new Canvas();
       this.setContentPane(canvas);
